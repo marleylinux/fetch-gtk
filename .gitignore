@@ -11,3 +11,4 @@ build/
 *.tar.gz
 pkg/
 srcdir/
+*.pkg.tar.zst

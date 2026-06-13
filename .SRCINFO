@@ -9,7 +9,9 @@ pkgbase = fetch-gtk
 	depends = python-gobject
 	depends = gtk4
 	depends = libadwaita
+	conflicts = gtkfetch
+	replaces = gtkfetch
 	source = fetch-gtk-1.0.1.tar.gz::https://github.com/marleylinux/fetch-gtk/archive/refs/tags/v1.0.1.tar.gz
-	sha256sums = SKIP
+	sha256sums = 816660f6824ab55b073ca771077757da7f00d005defadbc6dd928009983e09d7
 
 pkgname = fetch-gtk

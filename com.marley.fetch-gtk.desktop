@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=fetch-gtk
+Comment=A modern, polished GTK4/Libadwaita system fetch display (similar to fastfetch)
+Exec=fetch-gtk
+Icon=com.marley.fetch-gtk
+Terminal=false
+Type=Application
+Categories=System;GTK;
+Keywords=fastfetch;fetch;neofetch;system;hardware;stats;
+StartupNotify=true
+StartupWMClass=com.marley.fetch-gtk

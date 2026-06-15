@@ -1,8 +1,5 @@
 """UI elements, card structures, and components for fetch-gtk"""
-import logging
 from gi.repository import Gtk, Pango
-
-log = logging.getLogger(__name__)
 
 def _bar_class(fraction: float) -> str:
     """Determine progress bar coloring classes (from green to red)"""

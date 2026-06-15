@@ -1,6 +1,5 @@
 """UI page builders for fetch-gtk"""
 import os
-import logging
 from gi.repository import Gtk, Adw, Gdk
 from widgets import (
     _build_section_header,
@@ -13,9 +12,6 @@ try:
     from main import APP_VER
 except ImportError:
     APP_VER = "1.0.0"
-
-
-log = logging.getLogger(__name__)
 
 def _make_page_scaffold(name: str, title: str) -> tuple[Gtk.ScrolledWindow, Gtk.Box]:
     """Create a scrolled window and centered clamped box for consistent styling"""

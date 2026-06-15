@@ -1,7 +1,7 @@
 # Maintainer: Marley <warburtonmarley@proton.me>
 pkgname=fetch-gtk
-pkgver=1.0.1
-pkgrel=2
+pkgver=1.0.2
+pkgrel=1
 pkgdesc="A modern, polished GTK4/Libadwaita graphical interface similar to fastfetch."
 arch=('any')
 url="https://github.com/marleylinux/fetch-gtk"

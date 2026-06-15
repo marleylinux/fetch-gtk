@@ -15,7 +15,7 @@ log = logging.getLogger(__name__)
 
 APP_ID = "com.marley.fetch-gtk"
 APP_NAME = "fetch-gtk"
-APP_VER = "1.0.1"
+APP_VER = "1.0.2"
 
 class FetchGtkApp(Adw.Application):
     def __init__(self):
@@ -388,7 +388,7 @@ class FetchGtkApp(Adw.Application):
 
             # Update Telemetry cards
             if hasattr(self, "card_cpu_clock") and self.card_cpu_clock:
-                self.card_cpu_clock._val_lbl.set_text(f"{avg_clock:.2f}" if avg_clock else "—")
+                self.card_cpu_clock._val_lbl.set_text(f"{avg_clock:.2f}" if avg_clock is not None else "—")
                 
             if hasattr(self, "card_cpu_temp") and self.card_cpu_temp:
                 self.card_cpu_temp._val_lbl.set_text(f"{temp:.1f}" if temp is not None else "—")

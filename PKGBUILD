@@ -10,7 +10,7 @@ depends=('python>=3.11' 'python-gobject' 'gtk4' 'libadwaita')
 conflicts=('gtkfetch')
 replaces=('gtkfetch')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/marleylinux/fetch-gtk/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('797628e9ec1ed2771f221b6dee2440759a606be6aa04630a484f536bb29a8ba9')
+sha256sums=('afd781362897f84d17f80c576a7894436dc132d7247a12d151ee9d2c53fd6343')
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"

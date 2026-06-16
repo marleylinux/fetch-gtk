@@ -105,14 +105,22 @@ def build_main_window(app) -> Adw.ApplicationWindow:
     def update_header_title(stack, _paramspec):
         child = stack.get_visible_child()
         if child:
+            name = child.get_name()
             title = ""
             if hasattr(child, "get_title"):
                 title = child.get_title()
-            if title == "Dashboard" or (isinstance(child, Gtk.ScrolledWindow) and child.get_name() == "dashboard"):
+            if title == "Dashboard" or name == "dashboard":
                 title = "System Dashboard"
-            elif title == "Overview" or (isinstance(child, Gtk.ScrolledWindow) and child.get_name() == "overview"):
+            elif title == "Overview" or name == "overview":
                 title = "System Information"
             app.window_title.set_title(title)
+
+            # Show copy and screenshot only on overview page
+            is_overview = (name == "overview")
+            if hasattr(app, "btn_copy") and app.btn_copy:
+                app.btn_copy.set_visible(is_overview)
+            if hasattr(app, "btn_screenshot") and app.btn_screenshot:
+                app.btn_screenshot.set_visible(is_overview)
             
     view_stack.connect("notify::visible-child", update_header_title)
 
@@ -126,16 +134,19 @@ def build_main_window(app) -> Adw.ApplicationWindow:
 
     btn_copy = Gtk.Button(label="📋 Copy Fetch Text")
     btn_copy.add_css_class("preset-btn")
+    btn_copy.add_css_class("btn-power-saving")
     btn_copy.set_tooltip_text("Copy terminal fastfetch text layout to clipboard")
     btn_copy.connect("clicked", app.on_copy_fetch_clicked)
 
     btn_screenshot = Gtk.Button(label="📸 Screenshot Overview")
     btn_screenshot.add_css_class("preset-btn")
+    btn_screenshot.add_css_class("btn-balance")
     btn_screenshot.set_tooltip_text("Save the system overview card as a PNG image")
     btn_screenshot.connect("clicked", app.on_screenshot_clicked)
 
     btn_reload = Gtk.Button(label="🔄 Refresh Readings")
     btn_reload.add_css_class("preset-btn")
+    btn_reload.add_css_class("btn-max-performance")
     btn_reload.set_tooltip_text("Scan all hardware stats now")
     btn_reload.connect("clicked", app.on_refresh_clicked)
     
@@ -149,6 +160,9 @@ def build_main_window(app) -> Adw.ApplicationWindow:
 
     content_toolbar_view.add_bottom_bar(action_bar)
     split_view.set_content(content_toolbar_view)
+
+    # Initial call to apply button visibility rules
+    update_header_title(view_stack, None)
 
     toast_overlay = Adw.ToastOverlay()
     toast_overlay.set_child(split_view)

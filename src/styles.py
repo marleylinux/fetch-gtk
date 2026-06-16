@@ -339,4 +339,59 @@ progressbar.usage-bar.high progress {
     color: @accent_bg_color;
     opacity: 1.0;
 }
+
+/* ─── Preset buttons (Floating Action Feel) ───────────────── */
+.preset-row {
+    padding: 16px 24px;
+    background-color: transparent;
+    border: none;
+}
+
+.preset-btn {
+    border-radius: 28px;
+    padding: 10px 28px;
+    font-weight: 900;
+    font-size: 15px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    min-height: 48px;
+    border: 1px solid transparent;
+}
+
+.preset-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px alpha(black, 0.2);
+}
+
+.btn-power-saving {
+    background-color: alpha(@semantic_green, 0.18);
+    color: @semantic_green;
+    border-color: alpha(@semantic_green, 0.4);
+}
+
+.preset-btn.btn-power-saving:hover {
+    background-color: alpha(@semantic_green, 0.3);
+    border-color: @semantic_green;
+}
+
+.btn-balance {
+    background-color: alpha(@semantic_yellow, 0.18);
+    color: @semantic_yellow;
+    border-color: alpha(@semantic_yellow, 0.4);
+}
+
+.preset-btn.btn-balance:hover {
+    background-color: alpha(@semantic_yellow, 0.3);
+    border-color: @semantic_yellow;
+}
+
+.btn-max-performance {
+    background-color: alpha(@semantic_red, 0.18);
+    color: @semantic_red;
+    border-color: alpha(@semantic_red, 0.4);
+}
+
+.preset-btn.btn-max-performance:hover {
+    background-color: alpha(@semantic_red, 0.3);
+    border-color: @semantic_red;
+}
 """

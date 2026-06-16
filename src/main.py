@@ -15,7 +15,7 @@ log = logging.getLogger(__name__)
 
 APP_ID = "com.marley.fetch-gtk"
 APP_NAME = "fetch-gtk"
-APP_VER = "1.0.2"
+APP_VER = "1.0.3"
 
 class FetchGtkApp(Adw.Application):
     def __init__(self):
@@ -516,8 +516,6 @@ class FetchGtkApp(Adw.Application):
             css_lines.append("@define-color selection_fg_color #ffffff;")
 
             css_lines.append(".suggested-action { background-color: @accent_bg_color; color: @accent_fg_color; }")
-            css_lines.append(".preset-btn { border-color: alpha(@accent_bg_color, 0.3); }")
-            css_lines.append(".preset-btn:hover { background-color: alpha(@accent_bg_color, 0.1); border-color: @accent_bg_color; }")
 
         # Set dynamic color definitions
         css_lines.append(f"@define-color cpu_badge_fg {palette['cpu_fg']};")

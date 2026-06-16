@@ -14,7 +14,7 @@ echo "==> Removing fetch-gtk..."
 rm -rf /usr/share/fetch-gtk
 rm -f  /usr/bin/fetch-gtk
 rm -f  /usr/share/applications/com.marley.fetch-gtk.desktop
-for size in 256 512; do
+for size in 16 24 32 48 64 128 256 512; do
     rm -f "/usr/share/icons/hicolor/${size}x${size}/apps/com.marley.fetch-gtk.png"
 done
 

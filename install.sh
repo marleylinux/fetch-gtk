@@ -51,11 +51,11 @@ find "$INSTALL_DIR/assets" -type d -exec chmod 755 {} +
 find "$INSTALL_DIR/assets" -type f -exec chmod 644 {} +
 
 # copy the app icons to the system icon folder
-for size in 256 512; do
+for size in 16 24 32 48 64 128 256 512; do
     ICON_DIR="/usr/share/icons/hicolor/${size}x${size}/apps"
     mkdir -p "$ICON_DIR"
-    if [ -f src/assets/com.marley.fetch-gtk.png ]; then
-        cp src/assets/com.marley.fetch-gtk.png "$ICON_DIR/com.marley.fetch-gtk.png"
+    if [ -f "src/assets/icons/${size}x${size}/com.marley.fetch-gtk.png" ]; then
+        cp "src/assets/icons/${size}x${size}/com.marley.fetch-gtk.png" "$ICON_DIR/com.marley.fetch-gtk.png"
         chmod 644 "$ICON_DIR/com.marley.fetch-gtk.png"
     fi
 done

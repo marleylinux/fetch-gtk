@@ -15,28 +15,42 @@ Like `Ryzenadj-gtk` and `cpupower-gtk`, it has different color themes and runs f
 - **Desktop info**: Shows your GTK theme, active font, icon sets, and session type (Wayland or X11).
 - **Color themes**: Switch between different color accents (Ryzen Red, DLSS Green, Arch Blue, etc.) to match your desktop.
 - **Copy Fetch**: A button to format and copy the classic terminal ASCII fetch directly to your clipboard.
+## Requirements
 
-## Installation
+- Python 3.11+
+- gtk4 + libadwaita + python-gobject
 
-### Arch (makepkg)
+## Install
+
+**Arch (easiest):**
+
+```bash
+yay -S fetch-gtk
+```
+
+Or build from this repo:
 
 ```bash
 git clone https://github.com/marleylinux/fetch-gtk
+```
+```bash
 cd fetch-gtk
 makepkg -si
 ```
 
-### Other Distros (Installer Script)
+**Other distros:**
 
 ```bash
 git clone https://github.com/marleylinux/fetch-gtk
+```
+```bash
 cd fetch-gtk
 sudo ./install.sh
 ```
 
-Then launch "fetch-gtk" from your application menu or run `fetch-gtk`.
+Then launch "fetch-gtk" from your menu or just run `fetch-gtk`.
 
-### Uninstall
+## Uninstall
 
 ```bash
 sudo ./uninstall.sh
